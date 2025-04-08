@@ -493,8 +493,8 @@ class BodyMeasurementSystem:
             waist_size = measurements['waist_size']
             
             # Size display in modern UI style
-            cv2.putText(frame, "Recommended Sizes:", (panel_x + 20, size_panel_y), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 1)
+            cv2.putText(frame, "Recommended Size:", (panel_x + 20, size_panel_y), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
             
             # Chest size in a pill shape
             size_x = panel_x + 20
@@ -503,19 +503,19 @@ class BodyMeasurementSystem:
             # Pills for chest size
             pill_width = 50
             pill_height = 24
-            cv2.rectangle(frame, (size_x, size_y - pill_height//2), 
-                         (size_x + pill_width, size_y + pill_height//2), 
-                         (102, 204, 255), -1, cv2.LINE_AA)
-            cv2.putText(frame, f"Chest: {chest_size}", (size_x + 5, size_y + 5), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
+            # cv2.rectangle(frame, (size_x, size_y - pill_height//2), 
+            #              (size_x + pill_width, size_y + pill_height//2), 
+            #              (102, 204, 255), -1, cv2.LINE_AA)
+            cv2.putText(frame, f"Body Size: {chest_size}", (size_x + 5, size_y + 5), 
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 255, 0), 2)
             
             # Pills for waist size
             size_x = panel_x + 180
-            cv2.rectangle(frame, (size_x, size_y - pill_height//2), 
-                         (size_x + pill_width, size_y + pill_height//2), 
-                         (102, 255, 178), -1, cv2.LINE_AA)
-            cv2.putText(frame, f"Waist: {waist_size}", (size_x + 5, size_y + 5), 
-                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
+            # cv2.rectangle(frame, (size_x, size_y - pill_height//2), 
+            #              (size_x + pill_width, size_y + pill_height//2), 
+            #              (102, 255, 178), -1, cv2.LINE_AA)
+            # cv2.putText(frame, f"Waist: {waist_size}", (size_x + 5, size_y + 5), 
+            #            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
         
         # Show calibration status with icon
         if self.calibration_complete:
